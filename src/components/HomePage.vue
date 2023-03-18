@@ -13,7 +13,7 @@ onMounted(() => {
 
 </script>
 <template>
-    <div v-show="repository.isLoading">
+    <div v-show="repository.isLoading" style="text-align: center; font-size: 2rem">
         Loading...
     </div>
     <RepositoryList v-show="!repository.isLoading" :repos="repository.repos" />
