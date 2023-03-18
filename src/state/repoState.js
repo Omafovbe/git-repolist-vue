@@ -4,6 +4,7 @@ import { $_getPosts } from "../services";
 export let repository = reactive({
     repos: [],
     isLoading: false,
+    curPage:1,
 
     async getRepos() {
         
@@ -29,5 +30,9 @@ export let repository = reactive({
 
     getSingle(node_id) {
         return this.repos.find( (repo) => repo.node_id === node_id)
+    },
+
+    updatePage(page) {
+        this.curPage = page
     }
 })

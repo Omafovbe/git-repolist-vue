@@ -5,7 +5,7 @@ let props = defineProps({
     maxVisibleButtons: {
         type: Number,
         required: false,
-        default: 4
+        default: 3
     },
     totalPages: {
         type: Number,
@@ -27,6 +27,8 @@ let props = defineProps({
 
 //  props.currentPage = 1;
 let emits = defineEmits(['pagechanged'])
+
+console.log(props.maxVisibleButtons, props.totalPages)
 
 
 function onPageChange(page) {
@@ -68,22 +70,25 @@ const startPage = computed(() => {
 });
 const endPage = computed(() => {
 
-    return Math.min(startPage + props.maxVisibleButtons - 1, props.totalPages);
+    // return Math.min(3, 2);
+    return Math.min((startPage.value + props.maxVisibleButtons - 1), props.totalPages);
 
 });
+
+
 const pages = computed(() => {
     const range = [];
 
-    for (let i = startPage; i <= endPage; i += 1) {
+    for (let i = startPage.value; i <= endPage.value; i += 1) {
         range.push({
             name: i,
             isDisabled: i === props.currentPage
         });
     }
-
+    
     return range;
 });
-
+console.log('start: ' +startPage.value + 'end: '+ endPage.value)
 const isInFirstPage = computed(() => {
     return props.currentPage === 1;
 });
@@ -130,10 +135,15 @@ const isInLastPage = computed(() => {
 
 .pagination-item {
   display: inline-block;
+  margin-right: 4px;
+}
+
+button {
+    padding: 5px;
 }
 
 .active {
-  background-color: #4AAE9B;
+  background-color: rgb(13, 142, 99);
   color: #ffffff;
 }
 </style>
