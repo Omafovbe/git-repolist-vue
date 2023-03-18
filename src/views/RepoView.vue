@@ -1,7 +1,6 @@
 <script setup>
 import { repository } from '../state/repoState';
 import { useRoute } from 'vue-router';
-import { computed } from '@vue/runtime-core';
 
 import { format, formatDistance } from "date-fns"
 
@@ -24,14 +23,14 @@ const lastUpdatedTimeLapse = formatDistance(new Date(repoSingle.updated_at), new
         <p v-show="!repoSingle.description">No Description Available</p>
         <p>{{ repoSingle.description }}</p>
         <p>
-            <i className="fa-brands fa-github"></i> {{ repoSingle.git_url }}
+            <i className="icon-github-circled"></i> {{ repoSingle.git_url }}
         </p>
 
         <p>
             <span v-if="repoSingle.language">
-                <i class="fa-solid fa-code"></i> {{ repoSingle.language }} &nbsp; &nbsp; &nbsp;
+                <i class="icon-book"></i> {{ repoSingle.language }} &nbsp; &nbsp; &nbsp;
             </span>
-            <i className="fa-solid fa-code-fork"></i> {{ repoSingle.forks }}
+            <i className="icon-fork"></i> {{ repoSingle.forks }}
         </p>
         <p>
             Last updated: {{ lastUpdatedAt }} &nbsp; ({{ lastUpdatedTimeLapse }})

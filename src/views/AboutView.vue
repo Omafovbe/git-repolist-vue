@@ -3,7 +3,7 @@
     <p><span class="title">Omafovbe Imonikosaye</span> <br />
     <span class="body">A Father, Web Developer and Teacher. Loves coding with knowledge in ReactJS, VueJS, PHP, HTML5, Open-Source Contributor and an apt Learner.</span>
     <br/>
-    <span class="socials"><i className="fa-solid fa-location-arrow"></i> Asaba &nbsp;&nbsp;&nbsp;<i className="fa-brands fa-twitter"></i> iomafovbe</span>
+    <span class="socials"><i className="icon-location"></i> Asaba &nbsp;&nbsp;&nbsp;<i className="icon-twitter"></i> iomafovbe</span>
     </p>
   </div>
 </template>
