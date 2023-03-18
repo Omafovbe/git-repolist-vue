@@ -18,6 +18,11 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
+      path: '/repo/:id',
+      name: 'repository',
+      component: () => import('../views/RepoView.vue')
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import('@/views/404View.vue'),
